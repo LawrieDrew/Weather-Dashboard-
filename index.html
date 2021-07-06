@@ -10,48 +10,55 @@
     <link href="/your-path-to-fontawesome/css/fontawesome.css" rel="stylesheet">
     <link href="/your-path-to-fontawesome/css/brands.css" rel="stylesheet">
     <link href="/your-path-to-fontawesome/css/solid.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="./assets/js/skycons.js"></script>
-    
+
     <link rel="stylesheet" href="/style.css">
     <title>Your Five Day Forecast!</title>
-</head>
+    <body>
+        <header class="header">
+                <p id="today" class="lead"></p>
+            </header>
+        </header>
+        <div class="bg-dark pt-2 pb-2"> 
+            <div class="container">
+                <h1 class="text-center text-white">Your Five Day Forecast</h1>
+            </div>
+        </div>
+        <div class="container-fluid"> 
+    
+            <div class="row"> 
+                <div class="col-lg-3 bg-light pt-3 pb-3"> 
+    
+                    <h2>Search for a city:</h2>
+                    <div class="input-group mb-3"> 
+                        <input id="search-input" type="text" class="form-input" placeholder="City name" class="input-group-append">
+                        <button id="searchBtn" class="btn btn-secondary" type="button" id="search-button"><i class="far fa-search"></i></button>
+                    </div>
+                    <div class="card"> 
+                        <ul class="list-group list-group-flush list">
+                        </ul>
+                    </div> 
+                </div> 
+                <div class="col-lg-9"> 
+                    <div id="currentCity" class="mt-4">
+                        
+                    </div>
+                </div> 
+            </div> 
+            <div class="mt-4 col-md-12"> 
+                <h3 id="forecast-one" class="mt-3 hide">5 Days Out</h3>
+                <div id="forecast" class="row"> 
+                </div>
+            </div> 
 
-<body>
-    <div class="bg-dark pt-2 pb-2">
-        <div class="container">
-            <h1 class="text-center text-white">Your Five Day Forecast!</h1>
-        </div>
-    </div>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-3 bg-light pt-3 pb-3">
-                <h5>Search for a city:</h5>
-                <div class="input-group mb-3">
-                    <input id="searchTerm" type="text" class="form-control" placeholder="City name..."
-                        class="input-group-append">
-                    <button id="searchBtn" class="btn btn-primary" type="button" id="button-addon2"><i
-                            class="far fa-search"></i></button>
-                </div>
-                <div class="card">
-                    <ul class="list-group list-group-flush list">
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-9">
-                <div id="currentCity" class="mt-4">
-                </div>
-            </div>
-        </div>
-        <div class="mt-4 col-md-12">
-            <h5 id="forecastH5" class="mt-3 hide">Let's Hope I'm Right:</h5>
-            <div id="forecast" class="row">
-            </div>
-        </div>
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-      <script src="https://kit.fontawesome.com/42a66a0b61.js"></script>
-      <script src="./assets/js/script.js"></script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script src="https://kit.fontawesome.com/42a66a0b61.js"></script>
+<script src=".script.js"></script>
 </body>
+
 </html>
