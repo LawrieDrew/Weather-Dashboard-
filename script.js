@@ -1,8 +1,8 @@
 let city = $("#search-input").val();
 
-let date = new Date();
-
 const apiKey = '6e0a6f003c0ba257f116574ef04963ac';
+
+let date = new Date();
 
 $("#search-input").keypress(function(event) { 
 	
@@ -22,7 +22,6 @@ $("#searchBtn").on("click", function() {
  
   $("#search-input").val("");  
 
-  //set up API Key 
 
 const queryURL = 'api.openweathermap.org/data/2.5/forecast?q=' + city + apiKey;
 
@@ -73,10 +72,10 @@ const queryURL = 'api.openweathermap.org/data/2.5/forecast?q=' + city + apiKey;
 const card = $('<div>').addClass('card');
 const cardBody = $("<div>").addClass("card-body");
 const city = $('<h1>').addClass('card-title').text(response.name);
-const date = moment('<h1>').format('ddd MMMM DD' + ',' + 'YYYY');
+const date = $("<h1>").addClass("card-title").text(date.toLocaleDateString('en-US'));
 const temperature = $("<p>").addClass("card-text current-temp").text("Temperature: " + tempF + " °F");
 //var uvIndex = $('#uv-index');
-const uvIndex = $('<p>').addClass('card-text current-uvIndex').text("Current UV Index: ")
+//const uvIndex = $('<p>').addClass('card-text current-uvIndex').text("Current UV Index: ")
 const humidity = $('<p>').addClass('card-text current-humidity').text("It Feels Like: " + response.main.humidity + '%');
 const wind = $('<p>').addClass('card-text current-wind').text("Feel the Breeze: " + response.wind.speed + " MPH");
 const image = $("<img>").attr("src", "https://openweathermap.org/img/w/" + response.weather[0].icon + ".png");
@@ -102,8 +101,9 @@ function todaysForecast() {
 
     for (let i = 0; i < results.length; i++) {
       let day = Number(results[i].dt_txt.split('-')[2].split(' ')[0]);
+         console.log(day);
       let hour = results[i].dt_txt.split('-')[2].split('-')[1];
-
+        console.log(hour);
       if (results[i]dt_txt.indexOf('12:00:00') !== -1)
       {
     let temp = (results[i].main.temp - 273.15) * 1.80 + 32;
@@ -117,9 +117,12 @@ function todaysForecast() {
 
         const image = $('<img>').attr('src', 'http://maps.openweathermap.org/maps/2.0/weather/{op}/{z}/{x}/{y}?appid={API key}')
 
+        card.Body.append(cityDate, image, temperature, humidity);
+        card.append(cardBody);
+        $('#forecast').append(card);
       }
     }
-
+ 
 
 
 //refresh page/clear page 
