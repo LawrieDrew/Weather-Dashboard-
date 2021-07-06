@@ -32,17 +32,17 @@ const queryURL = 'api.openweathermap.org/data/2.5/forecast?q=' + city + apiKey;
   })
   .then(function (response){
 
-    console.log(response)
+    console.log(response);
 
-    console.log(response.name)
+    console.log(response.name);
     console.log(response.weather[0].icon)
 
     let tempF = (response.main.temp - 273.15) * 1.80 + 32;
-    console.log(Math.floor(tempF))
+    console.log(Math.floor(tempF));
 
-    console.log(response.main.humidity)
+    console.log(response.main.humidity);
 
-    console.log(response.wind.speed)
+    console.log(response.wind.speed);
 
     getCurrentConditions(response);
     getCurrentForecast(response);
@@ -58,7 +58,6 @@ const queryURL = 'api.openweathermap.org/data/2.5/forecast?q=' + city + apiKey;
 
   function getCurrentConditions (response) {
 
-    // get the temperature and convert to fahrenheit 
     let tempF = (response.main.temp - 273.15) * 1.80 + 32;
     tempF = Math.floor(tempF);
 
@@ -71,8 +70,8 @@ const queryURL = 'api.openweathermap.org/data/2.5/forecast?q=' + city + apiKey;
 //wind
 const card = $('<div>').addClass('card');
 const cardBody = $("<div>").addClass("card-body");
-const city = $('<h1>').addClass('card-title').text(response.name);
-const date = $("<h1>").addClass("card-title").text(date.toLocaleDateString('en-US'));
+const city = $('<h2>').addClass('card-title').text(response.name);
+const date = $("<h2>").addClass("card-title").text(date.toLocaleDateString('en-US'));
 const temperature = $("<p>").addClass("card-text current-temp").text("Temperature: " + tempF + " °F");
 //var uvIndex = $('#uv-index');
 //const uvIndex = $('<p>').addClass('card-text current-uvIndex').text("Current UV Index: ")
@@ -85,12 +84,12 @@ const image = $("<img>").attr("src", "https://openweathermap.org/img/w/" + respo
 city.append(cityDate, image)
 cardBody.append(city, temperature, humidity, wind);
 card.append(cardBody);
-$("#currentCity").append(card)
+$("#currentCity").append(card);
 
-}
+};
 
 
-function todaysForecast() {
+function getTodaysForecast() {
   $.ajax({
     url: 'api.openweathermap.org/data/2.5/forecast?q=' + city + apiKey,
     method: 'GET'
@@ -123,8 +122,6 @@ function todaysForecast() {
       }
     }
  
-
-
 //refresh page/clear page 
 //function clearResults() {
  // event.preventDefault();
