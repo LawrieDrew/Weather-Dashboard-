@@ -6,23 +6,21 @@ A weekly weather forecast application for your sunny self!
 
 # Table of Contents
 
-* [Installation](#installation)
-
 * [Usage](#Usage)
 
 * [Github](#Github)
 
 * [License](#License)
 
-# Installation
-
-
-
 # Usage
 
-
+You can use it if you need it, I make no promises, I'm not a witch.
 
 # Github
+
+[Deployed](https://lawriedrew.github.io/Weather-Dashboard-/)
+
+[Repo](https://github.com/LawrieDrew/Weather-Dashboard-.git)
 
 
 # License 
